@@ -1,6 +1,3 @@
-# Created by
-Andy Lanclos
-
 # Twitch-Clippr
 Simple AngularJS App that utilizes the Twitch.tv REST API.
 
@@ -13,4 +10,6 @@ Simple AngularJS App that utilizes the Twitch.tv REST API.
 # Live @
 http://www.twitchclippr.andylanclos.com
 
+# Created by
+Andy Lanclos
 
