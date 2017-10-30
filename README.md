@@ -8,7 +8,7 @@ Simple AngularJS App that utilizes the Twitch.tv REST API.
 - ANGULARJS
 
 # Live @
-http://www.twitchclippr.andylanclos.com
+http://twitchclippr.andylanclos.com
 
 # Created by
 Andy Lanclos
