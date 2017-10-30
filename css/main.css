@@ -1,0 +1,146 @@
+
+/* General styles */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+
+body {
+    background-image: url('../img/background.png');
+    background-position: center top;
+    background-repeat: repeat-y;
+}
+
+.header-bg {
+    background-image: url('../img/bg.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+
+.main {
+    height: 100%;
+}
+
+.main-message {
+    margin-top: 75px;
+}
+
+form {
+    margin: 20px 0 25px 0;
+    padding: 50px 0 0;
+}
+
+form .input-group input{
+    background: rgba(0,0,0,0.5);
+    border-color: purple;
+    color: #ebebeb;
+    height: 50px;
+    font-size: 18px;
+}
+
+form .input-group input:focus {
+    border-color: #800080;
+}
+
+form .btn-custom {
+    background: purple;
+    border-color: purple;
+    color: #ebebeb;
+    height: 50px;
+}
+
+form .btn-custom:hover, form .btn-custom:active {
+    background: purple;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+/* Bootstrap Well styles */
+.well img {
+    width: 100px;
+}
+
+.well h3 {
+    margin-top: 0;
+}
+
+.well {
+    background: rgba(0,0,0,0.5);
+    border-color: purple;
+    color: #ebebeb;
+    margin-bottom: 50px;
+}
+
+.navbar-default {
+    background: #d9dbdb;
+}
+
+.navbar-brand {
+    padding: 4px 15px;
+}
+
+.navbar-brand img {
+    height: 45px;
+}
+
+.intro h2, .intro p {
+    color: #ebebeb;
+    text-shadow: 2px 1px #000;
+}
+
+/* Template CSS */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+/*body > .container {
+  padding: 60px 15px 0;
+}*/
+.container .text-muted {
+  margin: 20px 0;
+  color: #ebebeb;
+}
+
+.footer {
+    background: #800080;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

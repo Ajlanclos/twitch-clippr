@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="AngularJS app that searches twitch clips per user request">
+    <meta name="author" content="Andy 'Correktd' Lanclos">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Twitch Clipp'r</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+    <!-- Custom styles for this template -->
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+
+
+  </head>
+
+  <body ng-app="main">
+
+    <div class="header-bg">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="brand"/></a>
+            </div>
+        </div>
+        </nav>
+
+        <!-- Begin page content -->
+        <div class="container clearfix main" ng-controller="twitchUserCtrl">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 center">
+                    <div class="main-message" ng-show="user.users[0]._id == null">
+                        <div class="intro">
+                            <h2>Twitch Clipp'r</h2>
+                            <p>A modern Bootstrap and AngularJS application for searching for twitch.tv user video clips.</p>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="input-group input-group-custom">
+                            <input type="text" class="form-control" placeholder="Add twitch.tv user here" ng-model="twuser.username">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-custom" data-toggle="collapse" aria-controls="userInfo" type="button" ng-click="searchUser()">Search</button>
+                            </span>
+                        </div>
+                    </form>
+                    <div id="userInfo" class="well" ng-hide="user.users[0]._id == null">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img src="{{user.users[0].logo}}" alt="logo"/>
+                            </div>
+                            <div class="col-lg-3 left">
+                                <h3>{{user.users[0].display_name}}</h3>
+                                <p>{{user.users[0]._id}}</p>
+                                <a href="http://www.twitch.tv/{{user.users[0].display_name}}"><button class="btn btn-primary">Go To Channel</button></a>
+                            </div>
+                            <div class="col-lg-7 left">
+                                <p>{{user.users[0].bio}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-danger" ng-show="user._total == 0">
+                        <p>User was not found. Try again.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" ng-repeat="clip in clips">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{clip.title}}</div>
+                        <div class="panel-body">
+                            <a href="{{clip.url}}"><img src="{{clip.preview.medium}}"/></a>
+                            <p>Views: {{clip.views}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+            <p class="text-muted">This app is built with AngularJS & Bootstrap</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/twitchclipper.js"></script>
+  </body>
+</html>
+
+   
